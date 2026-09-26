@@ -1,1 +1,3 @@
 .maestri/
+__pycache__/
+*.py[cod]

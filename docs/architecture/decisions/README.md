@@ -15,6 +15,7 @@ and factual.
 | [0005](./0005-persistence-and-scope.md) | Persistence, positions computed on read, v1 scope | Accepted |
 | [0006](./0006-market-price-source.md) | Market price acquisition strategy | Proposed — pending product decision |
 | [0007](./0007-frontend-simplification-and-persistence-rationale.md) | Frontend simplification and persistence boundary rationale | Accepted |
+| [0008](./0008-average-cost-reset-on-closed-position.md) | Average cost resets to zero on a fully closed position | Accepted — approved product decision |
 
 ## When to add a new ADR
 

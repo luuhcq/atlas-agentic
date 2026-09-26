@@ -1,7 +1,7 @@
 # Atlas — Technical Architecture
 
 Status: Accepted (v1), pending items noted in §8
-Last reviewed: 2026-09-25 (architecture review — see [ADR-0007](./decisions/0007-frontend-simplification-and-persistence-rationale.md) and [ADR-0004](./decisions/0004-cost-basis-method.md))
+Last reviewed: 2026-09-25 (architecture review — see [ADR-0007](./decisions/0007-frontend-simplification-and-persistence-rationale.md) and [ADR-0004](./decisions/0004-cost-basis-method.md); domain gap resolved in [ADR-0008](./decisions/0008-average-cost-reset-on-closed-position.md))
 Owner: Software Architecture
 Related: [API Contract](./API_CONTRACT.md) · [Architecture Decision Records](./decisions/)
 
@@ -160,8 +160,11 @@ atlas-agentic/
   recalculates the running average cost; each sell realizes P&L against the
   average cost immediately before that sale and does not itself change the
   average cost of the remaining position; a sell for more units than
-  currently held must be rejected by the domain layer. See
-  [ADR-0004](./decisions/0004-cost-basis-method.md).
+  currently held must be rejected by the domain layer; when a sell brings
+  the held quantity to exactly 0, average cost resets to 0 rather than
+  retaining its last historical value. See
+  [ADR-0004](./decisions/0004-cost-basis-method.md) and
+  [ADR-0008](./decisions/0008-average-cost-reset-on-closed-position.md).
 
 ## 7. Testability
 

@@ -150,7 +150,10 @@ Response `200`:
 ]
 ```
 `average_price` is the moving weighted-average cost as of now (see
-[ADR-0004](./decisions/0004-cost-basis-method.md)). `current_price`,
+[ADR-0004](./decisions/0004-cost-basis-method.md)). It is **`0` for a fully
+closed position** (quantity `0`) rather than the last historical average
+cost — see [ADR-0008](./decisions/0008-average-cost-reset-on-closed-position.md).
+`current_price`,
 `market_value`, and `unrealized_pnl` are `null` until the market price
 source (Open Question in ARCHITECTURE.md) is decided and implemented; the
 field shape is defined now so the frontend can build against it.
